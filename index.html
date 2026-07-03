@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+  <div class='wrap'>
+    <h1>밀폐공간 작업허가 시스템</h1>
+
+    <!-- 신청인 정보 -->
+    <div class='card'>
+      <label>신청인<input></label>
+      <label>소속<input></label>
+      <label>직책<input></label>
+      <label>작업장소<input></label>
+      <label>작업방법<textarea></textarea></label>
+    </div>
+
+    <!-- 가스농도 3회 측정 -->
+    <h2>가스농도 (3회 측정)</h2>
+    <div class='card'>
+      <h3>1회 측정</h3>
+      산소 <input id="o1" value="20.9"><br>
+      CO <input id="co1" value="0"><br>
+      CO₂ <input id="co2_1" value="0.2"><br>
+      H₂S <input id="h1" value="0"><br>
+
+      <h3>2회 측정</h3>
+      산소 <input id="o2" value="20.9"><br>
+      CO <input id="co2" value="0"><br>
+      CO₂ <input id="co2_2" value="0.2"><br>
+      H₂S <input id="h2" value="0"><br>
+
+      <h3>3회 측정</h3>
+      산소 <input id="o3" value="20.9"><br>
+      CO <input id="co3" value="0"><br>
+      CO₂ <input id="co2_3" value="0.2"><br>
+      H₂S <input id="h3" value="0"><br>
+
+      <button onclick="judge()">자동판정</button>
+      <p id="r"></p>
+    </div>
+
+    <!-- 체크리스트 -->
+    <div class='card'>
+      <h2>체크리스트</h2>
+      <label><input type=checkbox> 환기시설 가동</label>
+      <label><input type=checkbox> 작업감시인 배치</label>
+      <label><input type=checkbox> 특별안전교육</label>
+      <label><input type=checkbox> 출입금지 표지</label>
+      <label><input type=checkbox> 보호구 착용</label>
+    </div>
+
+    <!-- 관리책임자 성명 -->
+    <div class='card'>
+      <h2>관리책임자</h2>
+      <label>성명<input id="managerName"></label>
+    </div>
+
+    <!-- 작업감시인 성명 -->
+    <div class='card'>
+      <h2>작업감시인</h2>
+      <label>성명<input id="watcherName"></label>
+    </div>
+
+    <!-- 작업자 정보 (시간란 제거) -->
+    <div class='card'>
+      <h2>작업자</h2>
+      <label>성명<input></label>
+    </div>
+
+    <button onclick='window.print()'>인쇄</button>
+  </div>
+  <script src='script.js'></script>
+</body>
+</html>
